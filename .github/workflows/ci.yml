@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          clean: false
+
+      - name: Get Mathlib cache and build
+        uses: leanprover/lean-action@v1
+        with:
+          use-mathlib-cache: true
+          build: true
+
+      - name: Check terminal statements and transitive axioms
+        run: lake env lean -DautoImplicit=false verify/Check.lean
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Check exact matrix certificates
+        run: |
+          python -m pip install -r verify/requirements.txt
+          python verify/verify_matrices.py

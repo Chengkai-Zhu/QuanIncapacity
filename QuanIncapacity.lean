@@ -1,0 +1,62 @@
+/-
+Formalization of "Quantum incapacity from observable shadows" (Zhu & Wang).
+Built on Lean-QIT and mathlib. Operational theorem parameters are documented
+in EXTERNAL_DEPENDENCIES.md; verification instructions are in VERIFICATION.md.
+-/
+
+import QuanIncapacity.Qutrit.Lambda
+import QuanIncapacity.Qutrit.ShadowMap
+import QuanIncapacity.Qutrit.Defect
+import QuanIncapacity.Separation.ChoiState
+import QuanIncapacity.Separation.ChoiBridge
+import QuanIncapacity.Separation.NonAntidegradable
+import QuanIncapacity.Activation.QubitRestriction
+import QuanIncapacity.Activation.SingleExcitation
+import QuanIncapacity.Activation.HelperChannel
+import QuanIncapacity.Framework.Shadowing
+import QuanIncapacity.Framework.Capacities
+import QuanIncapacity.Framework.HermitianDilation
+import QuanIncapacity.Framework.Quadratic
+import QuanIncapacity.Qutrit.CompleteShadow
+import QuanIncapacity.Qutrit.Stinespring
+import QuanIncapacity.Qutrit.Adjoint
+import QuanIncapacity.Framework.PrivateCapacity
+import QuanIncapacity.Framework.ArithmeticWeights
+import QuanIncapacity.Framework.LogarithmicMean
+import QuanIncapacity.Framework.Adjoint
+import QuanIncapacity.Framework.ArithmeticMetric
+import QuanIncapacity.Framework.DiagonalMetric
+import QuanIncapacity.Qutrit.ArithmeticMetric
+import QuanIncapacity.Qutrit.BKM
+import QuanIncapacity.Qutrit.ZeroCapacity
+import QuanIncapacity.Activation.DephasedErasureChannel
+import QuanIncapacity.Activation.EntropyBounds
+import QuanIncapacity.Activation.FinitePrivateBlock
+import QuanIncapacity.Activation.UniversalActivation
+import QuanIncapacity.Activation.PartnerStability
+import QuanIncapacity.Qutrit.AlgebraicConsequences
+import QuanIncapacity.Framework.SupportCriterion
+import QuanIncapacity.Activation.PPTActivation
+import QuanIncapacity.Qutrit.VarianceEquality
+import QuanIncapacity.Qutrit.DefectSpectrum
+import QuanIncapacity.Activation.NonprivateActivation
+import QuanIncapacity.Activation.HelperShields
+import QuanIncapacity.Separation.AmplitudeDampingInverse
+import QuanIncapacity.Separation.ChoiDistillation
+import QuanIncapacity.Separation.OneCopyFilter
+import QuanIncapacity.Framework.HalfLineResolvent
+import QuanIncapacity.Framework.ShadowingStatistics
+import QuanIncapacity.Qutrit.SectorDimensions
+import QuanIncapacity.Qutrit.DefectContractions
+import QuanIncapacity.Qutrit.ComponentIdentities
+import QuanIncapacity.Activation.HelperBlocks
+import QuanIncapacity.Activation.HelperSpectrum
+
+import QuanIncapacity.Framework.RegularizedInformationLimit
+import QuanIncapacity.Framework.CoherentMaximum
+import QuanIncapacity.Qutrit.SectorOrthogonality
+import QuanIncapacity.Framework.PhysicalShadowing
+import QuanIncapacity.Activation.HelperStates
+import QuanIncapacity.Activation.EncodedBasisActions
+import QuanIncapacity.Qutrit.ChannelAdjoints
+import QuanIncapacity.Framework.ReconstructionContract

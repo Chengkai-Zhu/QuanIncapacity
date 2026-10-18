@@ -1,0 +1,17 @@
+# Build artifacts
+.lake/
+
+# macOS
+.DS_Store
+
+# Local configuration
+.claude/
+
+# Editor / misc
+*.olean
+*.ilean
+
+# Local verification output and Python environments
+.verification/
+.venv/
+__pycache__/
